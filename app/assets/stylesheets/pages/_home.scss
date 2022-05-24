@@ -1,9 +1,16 @@
 // Specific CSS for your home-page
 .banner {
+  height: 80vh;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
 }
+
+// .container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 
 .banner h1 {
   margin: 0;
@@ -11,14 +18,18 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 40px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-flat {
+.btn-success {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #1EDD88;
+  border-radius: 8px;
   transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .btn-flat:hover {
