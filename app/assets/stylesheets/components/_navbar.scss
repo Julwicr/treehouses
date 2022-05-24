@@ -19,8 +19,17 @@
 .navbar{
   padding-top: 0rem !important;
   padding-bottom: 0rem !important;
+  height: 80px;
 }
 
 a:hover {
   opacity: 1;
 }
+
+.avatar:hover {
+  transform: scale(1.4);
+}
+
+.avatar {
+  transition: all .4s ease-in-out;
+  }
