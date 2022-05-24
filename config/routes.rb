@@ -6,3 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 end
+
+
+# Rails.application.routes.draw do
+#   root to: “treehouses#home”
+#   resources :treehouses, only: %i[index new create show] do
+#     resources :bookings, only: %i[create new]
+#   end
+#   resources :dashboard, only: %i[show]
+# end
