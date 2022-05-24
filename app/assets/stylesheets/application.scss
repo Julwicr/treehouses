@@ -20,8 +20,8 @@
   margin-bottom: 0px;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 50px);
-  padding-bottom: 50px;
+  min-height: calc(100vh - 100px);
+  padding-bottom: 0px;
 }
 
 * {
@@ -34,7 +34,6 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 2px;
-  // display: flex;
   background-color: #F8F9FA;
 }
 
