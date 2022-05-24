@@ -1,0 +1,9 @@
+<h1>Create a treehouse</h1>
+<%= simple_form_for(@treehouse) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price_per_night %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
