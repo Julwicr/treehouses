@@ -6,9 +6,21 @@ class BookingsController < ApplicationController
   end
 
   def create
-    booking = Booking.new(params[:booking])
-    booking.user = current_user
-    #bokking.treehouse_id = treehouse_id
-    booking.save
+    @booking = Booking.new(booking_params)
+    @treehouse = Treehouse.find(params[:treehouse_id])
+    @booking.user = current_user
+    @booking.treehouse = @treehouse
+    authorize @booking
+    if @booking.save
+      redirect_to treehouses_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:check_in, :check_out, :number_of_guests)
   end
 end
