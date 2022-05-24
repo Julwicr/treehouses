@@ -6,5 +6,9 @@ class BookingsController < ApplicationController
   end
 
   def create
+    booking = Booking.new(params[:booking])
+    booking.user = current_user
+    #bokking.treehouse_id = treehouse_id
+    booking.save
   end
 end
