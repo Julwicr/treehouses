@@ -1,0 +1,8 @@
+<div id="cookies-bar" class="cookies-bar">
+  <p>
+    We use cookies. Do you accept them?
+  </p>
+
+  <%= link_to 'Accept', request.original_url, class: 'btn accept' %>
+  <%= link_to 'Reject', request.original_url, class: 'btn reject' %>
+</div>
