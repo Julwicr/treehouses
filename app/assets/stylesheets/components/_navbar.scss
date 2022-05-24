@@ -7,10 +7,6 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 50px;
-}
-
 .container-fluid {
   padding-left: 3rem !important;
   padding-right: 3rem !important;
@@ -33,3 +29,12 @@ a:hover {
 .avatar {
   transition: all .4s ease-in-out;
   }
+
+.navbar-lewagon .navbar-brand img {
+  width: 60px;
+  transition: all .4s ease-in-out;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.25);
+}
