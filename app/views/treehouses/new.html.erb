@@ -1,25 +1,9 @@
-<%= simple_form_for(@treehouse) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price_per_night %>
-    <%= form.text_field :price_per_night %>
-  </div>
-
-    <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<h1>Create a treehouse</h1>
+<%= simple_form_for(@treehouse) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :price_per_night %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
 <% end %>
