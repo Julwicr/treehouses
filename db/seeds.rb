@@ -17,6 +17,7 @@ puts 'Creating 5 users'
   user = User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
+    password: Faker::Internet.password,
     email: Faker::Internet.email,
     phone_number: Faker::PhoneNumber.cell_phone
   )
@@ -43,7 +44,6 @@ puts 'Creating 10 treehouses'
   puts "Address: #{treehouse.address}"
   puts "Name: #{treehouse.price_per_night}"
   puts ''
-  p treehouse.valid?
 end
 
 puts 'Finished!'
