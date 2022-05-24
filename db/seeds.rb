@@ -31,7 +31,7 @@ end
 puts 'Creating 10 treehouses'
 
 10.times do
-  treehouse = Treehouse.create(
+  treehouse = Treehouse.create!(
     user_id: rand(1..5),
     name: Faker::Mountain.name,
     address: Faker::Address.full_address,
@@ -42,7 +42,8 @@ puts 'Creating 10 treehouses'
   puts "User ID: #{treehouse.user_id}"
   puts "Name: #{treehouse.name}"
   puts "Address: #{treehouse.address}"
-  puts "Name: #{treehouse.price_per_night}"
+  puts "Price per night: #{treehouse.price_per_night}"
+  puts "Price per night: #{treehouse.description}"
   puts ''
 end
 
