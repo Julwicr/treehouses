@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @treehouse.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @treehouse.address %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @treehouse.description %>
+</p>
+
+<h1>Create a booking</h1>
+<%= simple_form_for([@treehouse, @booking]) do |f| %>
+  <%= f.input :check_in %>
+  <%= f.input :check_out %>
+  <%= f.input :number_of_guests %>
+  <%= f.submit %>
+<% end %>

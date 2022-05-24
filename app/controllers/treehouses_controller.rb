@@ -6,6 +6,7 @@ class TreehousesController < ApplicationController
 
   def show
     @treehouse = Treehouse.find(params[:id])
+    @booking = Booking.new
     authorize @treehouse
   end
 
