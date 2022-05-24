@@ -1,21 +1,24 @@
 class TreehousesController < ApplicationController
   skip_before_action :authenticate_user!
   def index
-    @treehouses = Treehouse.all
+    @treehouses = policy_scope(Treehouse)
   end
 
   def show
     @treehouse = Treehouse.find(params[:id])
+    authorize @treehouse
   end
 
   def new
     @treehouse = Treehouse.new
+    authorize @treehouse
   end
 
   def create
     treehouse = Treehouse.new(params[:treehouse])
     treehouse.user = current_user
     treehouse.save
+    authorize @treehouse
   end
 
   private
