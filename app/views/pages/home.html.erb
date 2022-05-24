@@ -4,7 +4,9 @@
     <div class="d-flex justify-content-center mt-3">
       <input class="me-3" type="text" id="destination" placeholder="Where to?">
       <input class="me-3" type="text" id="date" placeholder="When?">
-      <button class="btn btn-primary" type="submit">Book now</button>
+      <%= link_to treehouses_path do %>
+        <button class="btn btn-primary" type="submit">Book now</button>
+      <% end %>
     </div>
   </div>
 </div>
