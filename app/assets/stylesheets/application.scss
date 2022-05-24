@@ -28,34 +28,3 @@
   font-family: 'Roboto', sans-serif;
   color: #222222;
 }
-
-.treehouse-card {
-  height: 350px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  border-radius: 2px;
-  // display: flex;
-  background-color: #F8F9FA;
-}
-
-.treehouse-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-
-  .treehouse-card-image {
-    background-color: rgba(0,0,0,0);
-  }
-}
-
-.treehouse-card-image {
-  height: 60%;
-  width: 100%;
-  background-position: center;
-  background-size: cover;
-  background-color: rgba(0,0,0,0.2);
-  background-blend-mode: color;
-  border-radius: 2px 2px 0 0;
-}
-
-.treehouse-card-content {
-  padding: 24px;
-}
