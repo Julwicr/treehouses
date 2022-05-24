@@ -20,12 +20,11 @@
   <body>
     <%= render "shared/navbar" %>
     <div class="main-container">
-     <%= yield %>
-     <% if cookies[:allow_cookies].blank? %>
+      <%= yield %>
+      <% if cookies[:allow_cookies].blank? %>
       <%= render 'shared/cookies_bar' %>
       <% end %>
-      
-      </div>
+    </div>
     <%# <p class="notice"><%= notice %>
     <%# <p class="alert"><%= alert %>
     <%# <%= render "shared/flashes" %>

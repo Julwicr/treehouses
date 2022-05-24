@@ -10,23 +10,23 @@ body {
 
   border: 1px solid #84adf2;
   border-bottom: none;
-  background-color: #F3F4F6;
+  background-color: #ece7e7d7;
 
   .btn {
     display: block;
-    border: 1px solid #72becd;
-    background-color: #72becd;
-    color: #FFF;
+    border: 1px solid #424c5e;
+    background-color: #91acda;
+    color: #ece7e7;
     padding: 5px;
     margin-bottom: 5px;
     text-align: center;
     text-decoration: none;
 
     &.accept:hover {
-      background-color: #047857;
+      background-color: #71ca7e;
     }
     &.reject:hover {
-      background-color: #B91C1C;
+      background-color: #db7770;
     }
   }
 
