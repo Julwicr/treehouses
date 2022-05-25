@@ -13,7 +13,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
@@ -21,6 +21,7 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03AL6JF1H9-573a953c4b47-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "New Treehouse", new_treehouse_path , class: "dropdown-item" %>
               <%= link_to "Trips", "#", class: "dropdown-item" %>
               <%= link_to "Whishlist", "#", class: "dropdown-item" %>
               <%= link_to "Help", "#", class: "dropdown-item" %>

@@ -1,0 +1,33 @@
+.banner-new {
+  height: 700px;
+  background-size: cover;
+  // background-position: center;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+.new-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin: 10vh;
+}
+
+.simple-form {
+  background: rgb(156, 130, 188);
+  font-family: 'Roboto', sans-serif !important;
+  color: #222222 !important;
+  display: flex;
+  padding: 20px;
+}
+
+.caption {
+  // left: 50px;
+  border: 3px solid #73AD21;
+  display: flex;
+  padding: 20px;
+
+  // width: 450px;
+  // height: 500px;
+}
