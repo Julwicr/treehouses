@@ -1,7 +1,7 @@
 <div
   class="map"
   style= "background-image:url(
-    <%= @treehouse.photo.attached? ? cl_image_path(@treehouse.photo.key) : asset_path('default_treehouse.jpg')%>)">
+   <%= @treehouse.photo.attached? ? cl_image_path(@treehouse.photo.key) : asset_path('default_treehouse.jpg')%>)">
 </div>
 
 <div class="container">
