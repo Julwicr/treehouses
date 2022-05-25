@@ -1,3 +1,23 @@
-<%= @user_bookings.each do |booking| %>
-<% booking %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="trips-and-bookings mt-3 mb-3">
+      <div class="col-6">
+        <h1>Your upcoming trips</h1>
+        <% @user_bookings.each do |booking| %>
+          <%= link_to treehouse_path(booking.treehouse), class: "link" do %>
+            <div class="booking">
+              <strong><p>Treehouse: <%= booking.treehouse.name %></p></strong>
+              <p>Check-in date: <%= booking.check_in %></p>
+              <p>Check-out date: <%= booking.check_out %></p>
+              <p>Number of guests: <%= booking.number_of_guests %></p>
+              <p>Price per night: $<%= booking.treehouse.price_per_night %>/night</p>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <h1>Your treehouse</h1>
+      </div>
+    </div>
+  </div>
+</div>
