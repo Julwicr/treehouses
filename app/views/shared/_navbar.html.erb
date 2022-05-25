@@ -2,9 +2,10 @@
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
         <img src="/assets/logo_tree.png" alt="Tree House Logo"/>
-
     <% end %>
 
+    <h1>TreeAndB</h1>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,12 +13,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03AL6JF1H9-573a953c4b47-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
