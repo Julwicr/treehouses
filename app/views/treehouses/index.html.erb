@@ -8,19 +8,21 @@
   <div class="row">
     <% @treehouses.each do |treehouse| %>
       <div class="col-md-4 mt-4">
-        <div class="treehouse-card">
-          <div
-          class="treehouse-card-image"
-          style= "background-image:url(
-            <%= treehouse.photo.attached? ? cl_image_path(treehouse.photo.key) : asset_path('default_treehouse.jpg')%>)">
-          </div>
-          <div class="treehouse-card-content">
-            <div class="treehouse-card-title">
-              <h4><%= treehouse.name %></h4>
+        <%= link_to treehouse_path(treehouse) do %>
+          <div class="treehouse-card">
+            <div
+            class="treehouse-card-image"
+            style= "background-image:url(
+              <%= treehouse.photo.attached? ? cl_image_path(treehouse.photo.key) : asset_path('default_treehouse.jpg')%>)">
             </div>
-            <p><%= treehouse.address %></p>
+        <% end %>
+            <div class="treehouse-card-content">
+              <div class="treehouse-card-title">
+                <h4><%= treehouse.name %></h4>
+              </div>
+              <p><%= treehouse.address %></p>
+            </div>
           </div>
-        </div>
       </div>
       <% end %>
   </div>
