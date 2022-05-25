@@ -18,7 +18,11 @@ class TreehousesController < ApplicationController
   def create
     @treehouse = Treehouse.new(treehouse_params)
     @treehouse.user = current_user
-    @treehouse.save
+    if @treehouse.save
+      redirect_to treehouses_path
+    else
+      render new_treehouse_path, status: :unprocessable_entity
+    end
     authorize @treehouse
   end
 

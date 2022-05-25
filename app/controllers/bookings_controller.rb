@@ -7,10 +7,11 @@ class BookingsController < ApplicationController
     @booking.treehouse = @treehouse
     authorize @booking
     if @booking.save
-      redirect_to treehouses_path
+      redirect_to dashboards_path
     else
-      render :new
+      render "treehouses/show", status: :unprocessable_entity
     end
+    authorize @treehouse
   end
 
   private
