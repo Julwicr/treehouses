@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :treehouses, only: %i[index new create show] do
     resources :bookings, only: %i[create new]
   end
-  resources :dashboard, only: %i[show]
+  resources :dashboards, only: %i[index]
 
   # Defines the root path route ("/")
   # root "articles#index"
