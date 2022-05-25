@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def show
+    # can we just use current_user here ?
+    @bookings = current_user.bookings.all
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @treehouse = Treehouse.find(params[:treehouse_id])
@@ -7,11 +12,13 @@ class BookingsController < ApplicationController
     @booking.treehouse = @treehouse
     authorize @booking
     if @booking.save
-      redirect_to dashboards_path
+      redirect_to treehouses_path
     else
-      render "treehouses/show", status: :unprocessable_entity
+      redirect_to new_treehouse_booking_path(@treehouse)
     end
-    authorize @treehouse
+  end
+
+  def destroy
   end
 
   private
