@@ -3,9 +3,12 @@ body {
 }
 
 .cookies-bar {
-  position: sticky;
-  bottom: 0;
-
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  right: 50%;
+  width: max-content;
+  transform: translate(-50%, 50%);
   padding: 0px 10px 5px 10px;
 
   border: 1px solid #84adf2;
