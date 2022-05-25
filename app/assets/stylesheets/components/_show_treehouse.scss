@@ -1,0 +1,23 @@
+.map {
+  height: 450px;
+  background-position: center;
+  background-size: cover;
+}
+
+.treehouse-show-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 2px;
+  background-color: #F8F9FA;
+  padding: 24px;
+}
+
+.treehouse-show-card-booking-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price-per-night {
+  display: flex;
+  align-items: center;
+
+}
