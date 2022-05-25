@@ -16,10 +16,8 @@
           <li class="nav-item dropdown">
             <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03AL6JF1H9-573a953c4b47-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Messages", "https://mondrianandme.com/" , class: "dropdown-item" %>
-              <%= link_to "New Treehouse", new_treehouse_path , class: "dropdown-item" %>
-              <%= link_to "Trips", "#", class: "dropdown-item" %>
-              <%= link_to "Whishlist", "#", class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboards_path, class: "dropdown-item" %>
+              <%= link_to "Add a treehouse", new_treehouse_path , class: "dropdown-item" %>
               <%= link_to "Help", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
