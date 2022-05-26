@@ -1,10 +1,24 @@
 .mapboxgl-popup {
   max-width: 200px;
   background-repeat: no-repeat;
+  opacity: 0.87;
+  border-radius: 11px;
+  background: #5e7261;
+  border-radius: 11px;
 }
 
 .mapboxgl-popup-content {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   background-repeat: no-repeat;
+  background: #8b9e8e !important;
+  border-radius: 11px !important;
 }
+
+.color-info h1  {
+  color: white !important;
+}
+
+// .mapboxgl-marker-anchor-center {
+//   background: #8b9e8e !important;
+// }
