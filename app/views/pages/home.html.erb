@@ -2,10 +2,13 @@
   <div class="container">
     <h1>Time to disconnect</h1>
     <div class="d-flex justify-content-center mt-3">
-      <input class="me-3" type="text" id="destination" placeholder="Where to?">
-      <input class="me-3" type="text" id="date" placeholder="When?">
-      <%= link_to treehouses_path do %>
-        <button class="btn btn-primary" type="submit">Book now</button>
+      <%= form_tag treehouses_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a treehouse"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
