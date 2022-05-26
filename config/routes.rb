@@ -6,5 +6,4 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
   resources :dashboards, only: %i[index]
-  resources :reviews, only: :destroy
 end

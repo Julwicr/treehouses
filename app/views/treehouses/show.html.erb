@@ -46,9 +46,9 @@
           <%= f.input :rating %>
           <%= f.submit "rate it" %>
         <% end %>
+        <% @reviews.each do |review| %>
+        <%= review.comment %>
 
-        <%= @reviews.each do |review| %>
-        <% review.rating %>
         <%end %>
 
       </div>
