@@ -1,7 +1,13 @@
 class TreehousesController < ApplicationController
   skip_before_action :authenticate_user!
+
   def index
     @treehouses = policy_scope(Treehouse)
+    if params[:query].present?
+      @search_treehouses = Treehouse.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @search_treehouses = Treehouse.all
+    end
   end
 
   def show
