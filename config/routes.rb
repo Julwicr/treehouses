@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :treehouses do
     resources :bookings, only: %i[create new]
+    resources :reviews, only: :create
   end
   resources :dashboards, only: %i[index]
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :reviews, only: :destroy
 end
