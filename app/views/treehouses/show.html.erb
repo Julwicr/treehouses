@@ -23,8 +23,8 @@
           <div class="price-per-night"><span>$<%= @treehouse.price_per_night %>/night</span></div>
         </div>
         <%= simple_form_for([@treehouse, @booking]) do |f| %>
-          <%= f.input :check_in %>
-          <%= f.input :check_out %>
+          <%= f.input :check_in, as: :date, html5: true  %>
+          <%= f.input :check_out, as: :date, html5: true  %>
           <%= f.input :number_of_guests %>
           <%= f.submit "Reserve" %>
         <% end %>
