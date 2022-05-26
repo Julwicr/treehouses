@@ -28,6 +28,9 @@
           <%= f.input :number_of_guests %>
           <%= f.submit "Reserve" %>
         <% end %>
+        <% if current_user == @treehouse.user %>
+          <li><%= link_to "Edit", edit_treehouse_path(@treehouse)%></li>
+        <% end  %>
       </div>
     </div>
   </div>
