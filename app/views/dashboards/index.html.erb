@@ -7,6 +7,15 @@
         <% @user_bookings.each do |booking| %>
           <%= link_to treehouse_path(booking.treehouse), class: "link" do %>
             <div class="booking">
+
+              <% if booking.pending? %>
+                <p class="status">Pending</p>
+              <% elsif booking.approved? %>
+                <p class="status">Approved</p>
+              <% else %>
+                <p class="status">Canceled</p>
+              <% end %>
+
               <strong><p>Treehouse: <%= booking.treehouse.name %></p></strong>
               <p>Check-in date: <%= booking.check_in %></p>
               <p>Check-out date: <%= booking.check_out %></p>

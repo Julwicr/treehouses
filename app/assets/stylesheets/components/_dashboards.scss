@@ -4,6 +4,13 @@
   background-color: #F8F9FA;
   padding: 24px;
   margin: 10px;
+  position: relative;
+}
+
+.status {
+  position: absolute;
+  right: 30px;
+  top: 20px;
 }
 
 .link {
