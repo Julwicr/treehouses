@@ -3,6 +3,13 @@ class TreehousesController < ApplicationController
   
   def index
     @treehouses = policy_scope(Treehouse)
+    @treehousesmap = Treehouse.all
+    @markers = @treehousesmap.geocoded.map do |treehouse|
+      {
+        lat: treehouse.latitude,
+        lng: treehouse.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {treehouse: treehouse})
+      }
     if params[:query].present?
       @search_treehouses = Treehouse.where("address ILIKE ?", "%#{params[:query]}%")
     else
@@ -63,3 +70,4 @@ class TreehousesController < ApplicationController
     params.require(:treehouse).permit(:address, :price_per_night, :description, :name, :photo)
   end
 end
+
