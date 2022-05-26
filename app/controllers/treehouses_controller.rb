@@ -5,12 +5,13 @@ class TreehousesController < ApplicationController
     @treehouses = policy_scope(Treehouse)
     @treehousesmap = Treehouse.all
     @markers = @treehousesmap.geocoded.map do |treehouse|
-      {
-        lat: treehouse.latitude,
-        lng: treehouse.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {treehouse: treehouse})
-      }
-    end
+        {
+          lat: treehouse.latitude,
+          lng: treehouse.longitude,
+          info_window: render_to_string(partial: "info_window", locals: {treehouse: treehouse}),
+          image_url: helpers.asset_url("/assets/mapin.png")
+        }
+      end
     if params[:query].present?
       @search_treehouses = Treehouse.where("address ILIKE ?", "%#{params[:query]}%")
     else
@@ -21,6 +22,8 @@ class TreehousesController < ApplicationController
   def show
     @treehouse = Treehouse.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
+    @reviews = @treehouse.reviews
     authorize @treehouse
   end
 

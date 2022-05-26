@@ -33,5 +33,25 @@
         <% end  %>
       </div>
     </div>
+
+
+        <div class="col-4 mt-3">
+      <div class="treehouse-show-card">
+        <div class="treehouse-show-card-booking-form">
+          <div class="book-now text-start"><h1>Rate this Treehouse now</h1></div>
+          <div class="price-per-night"><span>$<%= @treehouse.name %></span></div>
+        </div>
+        <%= simple_form_for([@treehouse, @review]) do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating %>
+          <%= f.submit "rate it" %>
+        <% end %>
+        <% @reviews.each do |review| %>
+        <%= review.comment %>
+
+        <%end %>
+
+      </div>
+    </div>
   </div>
 </div>
