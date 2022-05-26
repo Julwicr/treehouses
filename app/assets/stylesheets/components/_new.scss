@@ -17,7 +17,7 @@
 
 .caption p {
   display: flex;
-  padding: 20px;
+  padding: 10px;
   color: white;
   text-shadow: 8px 8px 10px rgba(0,0,0,1);
   font-size: 24px;
@@ -29,4 +29,13 @@
   border-radius: 2px;
   background-color: #f8f9fade;
   padding: 40px;
+}
+
+.banner-new {
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
