@@ -11,10 +11,11 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.treehouse = @treehouse
     authorize @booking
+    authorize @treehouse
     if @booking.save
-      redirect_to treehouses_path
+      redirect_to dashboards_path
     else
-      redirect_to new_treehouse_booking_path(@treehouse)
+      render 'treehouses/show', status: :unprocessable_entity
     end
   end
 
