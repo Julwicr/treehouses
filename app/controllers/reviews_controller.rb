@@ -1,5 +1,4 @@
 class ReviewsController < ApplicationController
-
   def create
     @review = Review.new(review_params)
     @treehouse = Treehouse.find(params[:treehouse_id])
