@@ -4,6 +4,8 @@
   transition: 0.3s;
   border-radius: 2px;
   background-color: #F8F9FA;
+  border-radius: 11px !important;
+
 }
 
 .treehouse-card:hover {
@@ -21,7 +23,8 @@
   background-size: cover;
   background-color: rgba(0,0,0,0.2);
   background-blend-mode: color;
-  border-radius: 2px 2px 0 0;
+  border-top-right-radius: 11px !important;
+  border-top-left-radius: 11px !important;
 }
 
 .treehouse-card-content {
