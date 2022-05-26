@@ -14,6 +14,9 @@ class TreehousesController < ApplicationController
     end
   end
 
+
+  
+
   def show
     @treehouse = Treehouse.find(params[:id])
     @booking = Booking.new
@@ -67,4 +70,3 @@ class TreehousesController < ApplicationController
     params.require(:treehouse).permit(:address, :price_per_night, :description, :name, :photo)
   end
 end
-
