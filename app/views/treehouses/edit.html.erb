@@ -16,7 +16,7 @@
         <%= f.input :photo, as: :file %>
         <%= f.submit %>
       <% end %>
-      <%= link_to "Delete", treehouse_path(@treehouse), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this treehouse?" }%>
+      <%= button_to "Delete", treehouse_path(@treehouse), class: "btn btn-cancel",method: :delete%>
     </div>
   </div>
 </div>

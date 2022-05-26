@@ -46,8 +46,8 @@ class TreehousesController < ApplicationController
   end
 
   def destroy
-    @treehouse = Treehouse.find(params[:id])
-    @treehouse.destroy
+    @treehouse = Treehouse.destroy(params[:id])
+    redirect_to new_treehouse_path, :notice => "treehouse '#{@treehouse.name}' was deleted."
     authorize @treehouse
   end
 
