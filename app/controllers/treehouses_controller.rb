@@ -1,5 +1,5 @@
 class TreehousesController < ApplicationController
-  skip_before_action :authenticate_user!
+  #skip_before_action :authenticate_user!
   def index
     @treehouses = policy_scope(Treehouse)
   end
@@ -23,6 +23,31 @@ class TreehousesController < ApplicationController
     else
       render new_treehouse_path, status: :unprocessable_entity
     end
+    authorize @treehouse
+  end
+
+  def edit
+    @treehouse = Treehouse.find(params[:id])
+    # checking if the user has the rights to edit the treehouse
+    unless @treehouse.user == current_user
+      redirect_to new_treehouse_path
+    end
+    authorize @treehouse
+  end
+
+  def update
+    @treehouse = Treehouse.find(params[:id])
+    if @treehouse.update(treehouse_params)
+      redirect_to @treehouse
+    else
+      render :edit, status: :unprocessable_entity
+    end
+    authorize @treehouse
+  end
+
+  def destroy
+    @treehouse = Treehouse.find(params[:id])
+    @treehouse.destroy
     authorize @treehouse
   end
 
