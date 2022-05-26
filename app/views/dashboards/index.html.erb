@@ -18,6 +18,29 @@
       </div>
       <div class="col-6">
         <h1>Your treehouse</h1>
+        <div class="treehouse">
+        <% @user_treehouses.each do |treehouse| %>
+        <%= treehouse.name %>
+        <div class="booking">
+          <% treehouse.bookings.each do |booking| %>
+
+            <p>Booked by: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+            <p>Check-in date: <%= booking.check_in %></p>
+            <p>Check-out date: <%= booking.check_out %></p>
+            <p>Number of guests: <%= booking.number_of_guests %></p>
+            <p>Status: <%= booking.status %></p>
+            <% if booking.pending? %>
+              <%= link_to "Approve", approve_status_path(booking)%>
+              <%= link_to "Reject", reject_status_path(booking)%>
+            <% elsif booking.approved?  %>
+              <%= link_to "Reject", reject_status_path(booking)%>
+            <% else %>
+              <%= link_to "Approve", approve_status_path(booking)%>
+            <% end %>
+          <% end %>
+          </div>
+        <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "pg_search"
+
 gem "devise"
 
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'

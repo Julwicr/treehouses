@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
   resources :dashboards, only: %i[index]
+  get "booking/:id/approve", to: "dashboards#approve_status", as: :approve_status
+  get "booking/:id/reject", to: "dashboards#reject_status", as: :reject_status
 end

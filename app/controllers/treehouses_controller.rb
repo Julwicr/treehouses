@@ -1,7 +1,20 @@
 class TreehousesController < ApplicationController
-  #skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!
+  
   def index
     @treehouses = policy_scope(Treehouse)
+    @treehousesmap = Treehouse.all
+    @markers = @treehousesmap.geocoded.map do |treehouse|
+      {
+        lat: treehouse.latitude,
+        lng: treehouse.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {treehouse: treehouse})
+      }
+    if params[:query].present?
+      @search_treehouses = Treehouse.where("address ILIKE ?", "%#{params[:query]}%")
+    else
+      @search_treehouses = Treehouse.all
+    end
   end
 
   def show
@@ -59,3 +72,4 @@ class TreehousesController < ApplicationController
     params.require(:treehouse).permit(:address, :price_per_night, :description, :name, :photo)
   end
 end
+
