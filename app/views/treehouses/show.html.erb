@@ -10,12 +10,29 @@
       <div class="treehouse-show-card">
         <h1><%= @treehouse.name %></h1>
         <p><%= @treehouse.address %></p>
+        <% if current_user == @treehouse.user %>
+          <%= link_to "Edit", edit_treehouse_path(@treehouse), class: "btn-approve"%>
+        <% end  %>
       </div>
       <div class="treehouse-show-card mt-3">
         <h3>Description</h3>
         <p><%= @treehouse.description %></p>
       </div>
     </div>
+    <br>
+  <div class="col-8 mt-3">
+    <div class="treehouse-show-card mt-3">
+        <h4>Rate this Treehouse</h4>
+        <%= simple_form_for([@treehouse, @review]) do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating %>
+          <%= f.submit "Rate it", class: "btn-approve"%>
+        <% end %>
+        <% @reviews.each do |review| %>
+        <%= review.comment %>
+        <%end %>
+    </div>
+   </div>
     <div class="col-4 mt-3">
       <div class="treehouse-show-card">
         <div class="treehouse-show-card-booking-form">
@@ -28,30 +45,8 @@
           <%= f.input :number_of_guests %>
           <%= f.submit "Reserve" %>
         <% end %>
-        <% if current_user == @treehouse.user %>
-          <li><%= link_to "Edit", edit_treehouse_path(@treehouse)%></li>
-        <% end  %>
       </div>
-    </div>
-
-
-        <div class="col-4 mt-3">
-      <div class="treehouse-show-card">
-        <div class="treehouse-show-card-booking-form">
-          <div class="book-now text-start"><h1>Rate this Treehouse now</h1></div>
-          <div class="price-per-night"><span>$<%= @treehouse.name %></span></div>
-        </div>
-        <%= simple_form_for([@treehouse, @review]) do |f| %>
-          <%= f.input :comment %>
-          <%= f.input :rating %>
-          <%= f.submit "rate it" %>
-        <% end %>
-        <% @reviews.each do |review| %>
-        <%= review.comment %>
-
-        <%end %>
-
-      </div>
+      <br>
     </div>
   </div>
 </div>
