@@ -5,7 +5,6 @@ class ReviewsController < ApplicationController
     @treehouse = Treehouse.find(params[:treehouse_id])
     @review.treehouse = @treehouse
     authorize @review
-    authorize @treehouse
     if @review.save
       redirect_to @treehouse
     else
