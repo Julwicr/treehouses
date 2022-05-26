@@ -1,10 +1,30 @@
-.booking {
+// .booking {
+//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+//   border-radius: 5px;
+//   background-color: #C2DED1;
+//   padding: 24px;
+//   margin: 10px;
+//   position: relative;
+// }
+
+.booking-container {
+  display: flex;
+  justify-content: space-between;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
-  background-color: #F8F9FA;
-  padding: 24px;
+  background-color: #C2DED1;
   margin: 10px;
+}
+
+.booking-info {
+  padding: 5px;
+  margin: 10px;
+}
+
+.booking-preview {
   position: relative;
+  background-color: white;
+  width: 45%;
 }
 
 .status {

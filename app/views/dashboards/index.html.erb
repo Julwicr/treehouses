@@ -6,21 +6,24 @@
         <h1>Your upcoming trips</h1>
         <% @user_bookings.each do |booking| %>
           <%= link_to treehouse_path(booking.treehouse), class: "link" do %>
-            <div class="booking">
-
-              <% if booking.pending? %>
-                <p class="status">Pending</p>
-              <% elsif booking.approved? %>
-                <p class="status">Approved</p>
-              <% else %>
-                <p class="status">Canceled</p>
-              <% end %>
-
-              <strong><p>Treehouse: <%= booking.treehouse.name %></p></strong>
-              <p>Check-in date: <%= booking.check_in %></p>
-              <p>Check-out date: <%= booking.check_out %></p>
-              <p>Number of guests: <%= booking.number_of_guests %></p>
-              <p>Price per night: $<%= booking.treehouse.price_per_night %>/night</p>
+            <div class="booking-container">
+              <div class="booking-info">
+                <strong><p> <%= booking.treehouse.name %></p></strong>
+                <p>Check-in date: <%= booking.check_in %></p>
+                <p>Check-out date: <%= booking.check_out %></p>
+                <p>Number of guests: <%= booking.number_of_guests %></p>
+                <p>Price per night: $<%= booking.treehouse.price_per_night %>/night</p>
+              </div>
+                <div class="booking-preview"
+                     style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('app/assets/images/default_treehouse.jpg')">
+                  <% if booking.pending? %>
+                    <p class="status">Pending</p>
+                  <% elsif booking.approved? %>
+                    <p class="status">Approved</p>
+                  <% else %>
+                    <p class="status">Canceled</p>
+                  <% end %>
+                </div>
             </div>
           <% end %>
         <% end %>
