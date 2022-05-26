@@ -18,6 +18,28 @@
   font-family: 'Work Sans', sans-serif;
 }
 
+.search-bar {
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
+}
+
+.form-control {
+  border-radius: 10px;
+  border: none !important;
+  height: 40px !important;
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 5px;
+  height: 40px !important;
+  border: none !important;
+}
+
 // .btn-success {
 //   color: white;
 //   padding: 8px 24px;

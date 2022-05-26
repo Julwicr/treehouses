@@ -4,7 +4,7 @@ class TreehousesController < ApplicationController
   def index
     @treehouses = policy_scope(Treehouse)
     @treehousesmap = Treehouse.all
-      @markers = @treehousesmap.geocoded.map do |treehouse|
+    @markers = @treehousesmap.geocoded.map do |treehouse|
         {
           lat: treehouse.latitude,
           lng: treehouse.longitude,
