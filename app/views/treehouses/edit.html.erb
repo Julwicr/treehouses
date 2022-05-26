@@ -1,22 +1,23 @@
-<div class="banner-new"
-  style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674)">
-
-  <div class="new-container">
-    <div class="caption">
-      <h1>Hi there,<br> Edit your treehouse <br> </h1>
-      <p>Changing is free and can take as <br> little as 1 minute to complete <br> – have fun</p>
-    </div>
-
-    <div class="simple-form">
-      <%= simple_form_for(@treehouse) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :address %>
-        <%= f.input :price_per_night %>
-        <%= f.input :description %>
-        <%= f.input :photo, as: :file %>
-        <%= f.submit %>
-      <% end %>
-      <%= button_to "Delete", treehouse_path(@treehouse), class: "btn btn-cancel",method: :delete%>
+<div class="edit-container">
+  <div class="banner-new"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @treehouse.photo.key %>')"
+  >
+    <div class="new-container">
+      <div class="caption">
+        <h1>Hi there,<br> edit your treehouse <br> </h1>
+        <p>Don't forget to save your changes</p>
+      </div>
+      <div class="simple-form">
+        <%= simple_form_for(@treehouse) do |f| %>
+          <%= f.input :name %>
+          <%= f.input :address %>
+          <%= f.input :price_per_night %>
+          <%= f.input :description %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit %>
+          <%= button_to "Delete", treehouse_path(@treehouse), class: "btn btn-cancel",method: :delete%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
