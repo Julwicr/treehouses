@@ -20,6 +20,8 @@ class TreehousesController < ApplicationController
   def show
     @treehouse = Treehouse.find(params[:id])
     @booking = Booking.new
+    @review = Review.new
+    @reviews = @treehouse.reviews
     authorize @treehouse
   end
 
