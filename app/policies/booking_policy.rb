@@ -13,4 +13,12 @@ class BookingPolicy < ApplicationPolicy
   def destroy
     true
   end
+
+  def approve_status?
+    true
+  end
+
+  def reject_status?
+    true
+  end
 end

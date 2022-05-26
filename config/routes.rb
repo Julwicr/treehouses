@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[create new]
   end
   resources :dashboards, only: %i[index]
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "booking/:id/approve", to: "dashboards#approve_status", as: :approve_status
+  get "booking/:id/reject", to: "dashboards#reject_status", as: :reject_status
 end
