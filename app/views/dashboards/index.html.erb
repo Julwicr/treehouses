@@ -3,7 +3,7 @@
   <div class="row">
     <div class="trips-and-bookings mt-3 mb-3">
       <div class="col-6">
-        <h1>Your upcoming trips</h1>
+        <h1 class="dashboard-cat">Your upcoming trips</h1>
         <% @user_bookings.each do |booking| %>
           <%= link_to treehouse_path(booking.treehouse), class: "link" do %>
             <div class="booking-container">
@@ -12,7 +12,7 @@
                 <p>Check-in date: <%= booking.check_in %></p>
                 <p>Check-out date: <%= booking.check_out %></p>
                 <p>Number of guests: <%= booking.number_of_guests %></p>
-                <p>Price per night: $<%= booking.treehouse.price_per_night %>/night</p>
+                <p class="justify-text-right">$<%= booking.treehouse.price_per_night %>/night</p>
               </div>
                 <div class="booking-preview"
                      style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('app/assets/images/default_treehouse.jpg')">
@@ -29,29 +29,36 @@
         <% end %>
       </div>
       <div class="col-6">
-        <h1>Your treehouse</h1>
+        <h1 class="dashboard-cat">Your treehouse</h1>
         <div class="treehouses">
           <div class="treehouse">
             <% @user_treehouses.each do |treehouse| %>
-              <%= link_to "🌳   #{treehouse.name}", treehouse_path(treehouse), class: "treehouse-title" %>
+              <%= link_to "🌳 #{treehouse.name}", treehouse_path(treehouse), class: "treehouse-title" %>
               <% unless treehouse.bookings.empty? %>
-                <div class="booking">
                   <% treehouse.bookings.each do |booking| %>
-                    <p>Booked by: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-                    <p>Check-in date: <%= booking.check_in %></p>
-                    <p>Check-out date: <%= booking.check_out %></p>
-                    <p>Number of guests: <%= booking.number_of_guests %></p>
-                    <p>Status: <%= booking.status %></p>
-                    <% if booking.pending? %>
-                      <%= link_to "Approve", approve_status_path(booking), class: "btn-approve"%>
-                      <%= link_to "Reject", reject_status_path(booking), class: "btn-reject"%>
-                    <% elsif booking.approved?  %>
-                      <%= link_to "Reject", reject_status_path(booking), class: "btn-reject"%>
-                    <% else %>
-                      <%= link_to "Approve", approve_status_path(booking), class: "btn-approve"%>
-                    <% end %>
-                  <% end %>
+                <div class="booking">
+                      <div class="booking-info justify-center">
+                        <p>Booked by: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+                        <p>📞 <%= booking.user.phone_number %> </p>
+                        <p>📫 <%= booking.user.email %> </p>
+                        <% if booking.pending? %>
+                          <%= link_to "Approve", approve_status_path(booking), class: "btn-approve"%>
+                          <%= link_to "Reject", reject_status_path(booking), class: "btn-reject"%>
+                        <% elsif booking.approved?  %>
+                          <%= link_to "Reject", reject_status_path(booking), class: "btn-reject"%>
+                        <% else %>
+                          <%= link_to "Approve", approve_status_path(booking), class: "btn-approve"%>
+                        <% end %>
+                      </div>
+                      <div class="booking-info">
+                        <p>Check-in date: <%= booking.check_in %></p>
+                        <p>Check-out date: <%= booking.check_out %></p>
+                        <p>Number of guests: <%= booking.number_of_guests %></p>
+                        <p>Status: <%= booking.status %></p>
+
+                      </div>
                   </div>
+                  <% end %>
               <% end %>
             <% end %>
           </div>
