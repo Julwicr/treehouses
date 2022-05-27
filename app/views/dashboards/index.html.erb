@@ -15,11 +15,11 @@
                 <p class="justify-text-right">$<%= booking.treehouse.price_per_night %>/night</p>
               </div>
                 <div class="booking-preview"
-                     style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('app/assets/images/default_treehouse.jpg')">
+                     style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= booking.treehouse.photo.attached? ? cl_image_path(booking.treehouse.photo.key) : asset_path('default_treehouse.jpg')%>); background-size: cover">
                   <% if booking.pending? %>
                     <p class="status">Pending</p>
                   <% elsif booking.approved? %>
-                    <p class="status">Approved</p>
+                    <p class="status">Confirmed</p>
                   <% else %>
                     <p class="status">Canceled</p>
                   <% end %>
@@ -37,7 +37,7 @@
               <% unless treehouse.bookings.empty? %>
                   <% treehouse.bookings.each do |booking| %>
                 <div class="booking">
-                      <div class="booking-info justify-center">
+                      <div class="booking-info">
                         <p>Booked by: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
                         <p>📞 <%= booking.user.phone_number %> </p>
                         <p>📫 <%= booking.user.email %> </p>

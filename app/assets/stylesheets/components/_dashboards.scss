@@ -1,5 +1,6 @@
 .dashboard-cat {
   padding: 15px;
+  text-align: center;
 }
 
 .booking {
@@ -42,10 +43,6 @@
   text-align: right;
 }
 
-.justify-center {
-  justify-items: center;
-}
-
 .link {
   text-decoration: none;
 }
@@ -64,6 +61,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   background-color: #f9f3ee;
+  margin: 20px;
 }
 
 
@@ -81,6 +79,7 @@
 }
 
 .btn-approve {
+  margin: 10px;
   color: #37a1f8;
   text-decoration: none;
   font-weight: 500;
@@ -95,6 +94,7 @@
 }
 
 .btn-reject {
+  margin: 10px;
   color: #eb4468;
   text-decoration: none;
   font-weight: 500;
