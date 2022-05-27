@@ -1,14 +1,27 @@
-  <div class="col-8 mt-3">
-    <div class="treehouse-show-card mt-3">
-      <% @reviews.each do |review| %>
-        <%= review.comment %>
+<div class="container">
+  <div class="row">
+    <div class="col-8 mt-3">
+      <div class="treehouse-show-card mt-3">
+        <div class="all-reviews">
+          <div class="all-reviews-header">
+            <h4>All reviews</h4>
+          </div>
+          <div class="all-reviews-button">
+            <%= link_to "Back to list", treehouse_path(@treehouse), class: "btn-approve" %>
+          </div>
+        </div>
+        <% @reviews.each do |review| %>
+          <li><i><%= review.comment %></i></li>
         <%end %>
-
+      </div>
+      <div class="treehouse-show-card mt-3">
         <h4>Rate this Treehouse</h4>
         <%= simple_form_for([@treehouse, @reviews_form]) do |f| %>
           <%= f.input :comment %>
           <%= f.input :rating %>
-          <%= f.submit "Rate it", class: "btn-approve"%>
+          <%= f.submit "Submit rating", class: "btn-approve"%>
         <% end %>
+      </div>
     </div>
-   </div>
+  </div>
+</div>

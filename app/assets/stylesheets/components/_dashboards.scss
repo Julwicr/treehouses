@@ -80,16 +80,17 @@
 
 .btn-approve {
   margin: 10px;
-  color: #37a1f8;
+  color: #1E5128;
   text-decoration: none;
   font-weight: 500;
   font-weight: bolder;
   padding: 5px 10px;
-  border: 2px solid #37a1f8;
+  border: 2px solid #C2DED1;
   border-radius: 5px;
   transition: 0.5s ease-in-out;
   &:hover {
-    background-color: #37a1f82a;
+    background-color: #3b8a162a;
+    color: #1E5128;
 }
 }
 
