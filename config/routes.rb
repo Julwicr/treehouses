@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :treehouses do
     resources :bookings, only: %i[create new]
-    resources :reviews, only: %i[create new index]
+    resources :reviews, only:  %i[create index]
   end
   resources :dashboards, only: %i[index]
   get "booking/:id/approve", to: "dashboards#approve_status", as: :approve_status
