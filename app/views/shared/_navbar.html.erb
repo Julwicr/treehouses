@@ -3,9 +3,9 @@
     <%= link_to root_path, class: "navbar-brand" do %>
         <img src="/assets/logo_tree.png" alt="Tree House Logo"/>
     <% end %>
-
-    <h1 class="shadow-for-logo" id="shake">TreeAndB</h1>
-
+    <%= link_to treehouses_path do %>
+      <h1 class="shadow-for-logo" id="shake">TreeAndB</h1>
+    <% end %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
