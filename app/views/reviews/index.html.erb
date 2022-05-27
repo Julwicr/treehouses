@@ -1,0 +1,14 @@
+  <div class="col-8 mt-3">
+    <div class="treehouse-show-card mt-3">
+      <% @reviews.each do |review| %>
+        <%= review.comment %>
+        <%end %>
+
+        <h4>Rate this Treehouse</h4>
+        <%= simple_form_for([@treehouse, @reviews_form]) do |f| %>
+          <%= f.input :comment %>
+          <%= f.input :rating %>
+          <%= f.submit "Rate it", class: "btn-approve"%>
+        <% end %>
+    </div>
+   </div>
