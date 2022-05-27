@@ -8,6 +8,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 20px;
+
 }
 
 .treehouses-map {
@@ -16,18 +18,28 @@
   width: 45%;
   height: 800px;
   margin-left: 5%;
+  margin-bottom: 20px;
+  margin-top: 20px;
 
   .mapboxgl-popup-tip {
-    border-top-color: red !important;
+    border-top-color: #222222e6 !important;
   }
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background-color: #F8F9FA;
+  padding: 24px;
 }
 
+.mapboxgl-ctrl-geocoder--input {
+  background-color: #c2ded1a3;
+}
 
 
 .treehouse-card {
   height: 350px;
   width: 300px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   // border-radius: 2px;
@@ -60,4 +72,18 @@
 
 .mapboxgl-canvas {
   border-radius: 11px !important;
+}
+
+.col-12 {
+  margin-top: 15px;
+}
+
+
+.headershadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+// 0 4px 8px 0 rgba(0,0,0,0.2)
+
+.samefont {
+  font-size: 16px !important;
 }
