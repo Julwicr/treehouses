@@ -8,18 +8,39 @@
   <div class="row">
     <div class="col-8 mt-3">
       <div class="treehouse-show-card">
-        <h1><%= @treehouse.name %></h1>
-        <p><%= @treehouse.address %></p>
-        <% if current_user == @treehouse.user %>
-          <%= link_to "Edit", edit_treehouse_path(@treehouse), class: "btn-approve"%>
-        <% end  %>
+        <div class="treehouse-show-card-header">
+          <div class="treehouse-show-card-content">
+            <h1><%= @treehouse.name %></h1>
+            <p><%= @treehouse.address %></p>
+          </div>
+          <% if current_user == @treehouse.user %>
+            <div class="edit-button">
+              <%= link_to "Edit", edit_treehouse_path(@treehouse), class: "btn-approve"%>
+            </div>
+          <% end  %>
+        </div>
+        <div class="mt-3">
+          <h3>Description</h3>
+          <p><%= @treehouse.description %></p>
+        </div>
       </div>
-      <div class="treehouse-show-card mt-3">
-        <h3>Description</h3>
-        <p><%= @treehouse.description %></p>
+      <div class="treehouse-show-card mt-3 mb-3">
+        <div class="reviews-content">
+          <div class="reviews-header">
+            <h4>Last Review</h4>
+            <% if @reviews.last.nil? %>
+              <p>No reviews yet</p>
+            <% else %>
+              <i>- <%=  @reviews.last.comment%></i>
+            <% end %>
+          </div>
+          <div class="all-reviews-button">
+            <%= link_to "All Reviews (#{@reviews.count})", treehouse_reviews_path(@treehouse), class: "btn-approve" %>
+          </div>
+        </div>
       </div>
     </div>
-      <div class="col-4 mt-3">
+    <div class="col-4 mt-3">
       <div class="treehouse-show-card">
         <div class="treehouse-show-card-booking-form">
           <div class="book-now text-start"><h1>Book now</h1></div>
@@ -34,16 +55,5 @@
       </div>
       <br>
     </div>
-  <div class="col-8 mt-3">
-    <div class="treehouse-show-card mt-3">
-      <h4>Last Review</h4>
-      <% if @reviews.last.nil? %>
-      <p>No reviews yet !</p>
-      <% else %>
-      <%=  @reviews.last.comment%>
-      <%= link_to "All Reviews", treehouse_reviews_path(@treehouse), class: "btn-approve" %>
-      <% end %>
-    </div>
-   </div>
   </div>
 </div>
