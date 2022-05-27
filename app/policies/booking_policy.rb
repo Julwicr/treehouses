@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
-  def destroy
+  def destroy?
     true
   end
 

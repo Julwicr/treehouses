@@ -1,16 +1,46 @@
+.dashboard-cat {
+  padding: 15px;
+  text-align: center;
+}
+
 .booking {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
-  background-color: #F8F9FA;
+  display: flex;
+  justify-content: space-between;
   padding: 24px;
   margin: 10px;
+  border-top: solid 1px #87b39e;
+  // border-bottom: solid 1px #87b39e;
+}
+
+.booking-container {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background-color: #C2DED1;
+  margin: 10px;
+}
+
+.booking-info {
+  padding: 5px;
+  margin: 10px;
+  width: 45%;
+}
+
+.booking-preview {
   position: relative;
+  background-color: white;
+  width: 50%;
 }
 
 .status {
   position: absolute;
   right: 30px;
   top: 20px;
+}
+
+.justify-text-right {
+  text-align: right;
 }
 
 .link {
@@ -21,9 +51,17 @@
   display: flex;
 }
 
+.treehouse {
+  padding-bottom: 25px;
+}
+
 .treehouses {
   display: flex;
   flex-flow: column;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background-color: #f9f3ee;
+  margin: 20px;
 }
 
 
@@ -31,7 +69,7 @@
   display: block;
   color: #816262;
   font-weight: bold;
-  margin: 20px 60px;
+  margin: 30px 0px 0px 40px;
   font-size: 30px;
   text-decoration: none;
   transition: 1s ease-out;
@@ -41,6 +79,7 @@
 }
 
 .btn-approve {
+  margin: 10px;
   color: #37a1f8;
   text-decoration: none;
   font-weight: 500;
@@ -55,6 +94,7 @@
 }
 
 .btn-reject {
+  margin: 10px;
   color: #eb4468;
   text-decoration: none;
   font-weight: 500;
