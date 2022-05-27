@@ -21,15 +21,24 @@
   margin-bottom: 20px;
   margin-top: 20px;
 
-  .mapboxgl-popup-tip {
-    border-top-color: #8fa299 !important;
-  }
+
+  // 9ca8a3
 
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 10px;
   background-color: #F8F9FA;
   padding: 24px;
 }
+
+
+// .mapboxgl-popup-tip,
+// .mapboxgl-popup-content,
+// .mapboxgl-popup-anchor-right,
+// .mapboxgl-popup-anchor-left, {
+//   background-color: red !important;
+// }
+
+
 
 .mapboxgl-ctrl-geocoder--input {
   background-color: #c2ded1a3;
