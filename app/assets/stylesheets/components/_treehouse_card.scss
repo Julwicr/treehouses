@@ -1,5 +1,33 @@
+.treehouses-flex-container {
+  display: flex;
+  width: 100%;
+}
+
+.treehouses-cards {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.treehouses-map {
+  position: sticky !important;
+  top: 0;
+  width: 45%;
+  height: 800px;
+  margin-left: 5%;
+
+  .mapboxgl-popup-tip {
+    border-top-color: red !important;
+  }
+}
+
+
+
 .treehouse-card {
   height: 350px;
+  width: 300px;
+  margin-bottom: 16px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   // border-radius: 2px;
