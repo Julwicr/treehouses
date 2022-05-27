@@ -19,9 +19,6 @@ class TreehousesController < ApplicationController
     end
   end
 
-
-  
-
   def show
     @treehouse = Treehouse.find(params[:id])
     @booking = Booking.new
@@ -39,7 +36,7 @@ class TreehousesController < ApplicationController
     @treehouse = Treehouse.new(treehouse_params)
     @treehouse.user = current_user
     if @treehouse.save
-      redirect_to treehouses_path
+      redirect_to treehouse_path(@treehouse)
     else
       render new_treehouse_path, status: :unprocessable_entity
     end

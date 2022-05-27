@@ -1,6 +1,6 @@
 <div class="edit-container">
   <div class="banner-new"
-    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @treehouse.photo.key %>')"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @treehouse.photo.attached? ? cl_image_path(@treehouse.photo.key) : asset_path('default_treehouse.jpg')%>'); background-size: cover"
   >
     <div class="new-container">
       <div class="caption">
