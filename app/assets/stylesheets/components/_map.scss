@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   opacity: 0.95;
   border-radius: 11px;
-  background: #5e72619f !important;
+  background: #accabc !important;
   border-radius: 11px;
 }
 
@@ -11,19 +11,21 @@
   text-align: center;
   font-family: "Open Sans", sans-serif;
   background-repeat: no-repeat;
-  background: #5e7261 !important;
+  background: #c2ded1 !important;
   border-radius: 11px !important;
   padding: 25px 25px 23px !important;
+  opacity: 0.97;
 }
 
-h2,
-p {
-  color: white !important;
-}
+// .color-info {
+//   color: white !important;
+//   // font-weight: bold;
+// }
 
 .Map marker {
-  background: #5e72619f !important;
+  background: #C2DED1 !important;
 }
+
 // .mapboxgl-marker-anchor-center {
 //   background: #8b9e8e !important;
 // }
