@@ -1,6 +1,5 @@
-<div class="edit-container">
   <div class="banner-new"
-    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @treehouse.photo.attached? ? cl_image_path(@treehouse.photo.key) : asset_path('default_treehouse.jpg')%>'); background-size: cover"
+    style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @treehouse.photo.attached? ? cl_image_path(@treehouse.photo.key) : asset_path('default_treehouse.jpg')%>'); background-size:cover"
   >
     <div class="new-container">
       <div class="caption">
@@ -15,9 +14,8 @@
           <%= f.input :description %>
           <%= f.input :photo, as: :file %>
           <%= f.submit %>
-          <%= button_to "Delete", treehouse_path(@treehouse), class: "btn btn-reject",method: :delete%>
         <% end %>
+          <%= button_to "Delete", treehouse_path(@treehouse), class: "btn btn-reject",method: :delete%>
       </div>
     </div>
   </div>
-</div>
