@@ -3,7 +3,7 @@
   <div class="row">
     <div class="trips-and-bookings mt-3 mb-3">
       <div class="col-6">
-        <h1 class="dashboard-cat">Your upcoming trips</h1>
+        <h1 class="dashboard-cat shadow-for-logo">Your upcoming trips</h1>
         <% @user_bookings.each do |booking| %>
           <%= link_to treehouse_path(booking.treehouse), class: "link" do %>
             <div class="booking-container">
@@ -29,7 +29,7 @@
         <% end %>
       </div>
       <div class="col-6">
-        <h1 class="dashboard-cat">Your treehouse</h1>
+        <h1 class="dashboard-cat shadow-for-logo">Your treehouse</h1>
         <div class="treehouses">
           <div class="treehouse">
             <% @user_treehouses.each do |treehouse| %>

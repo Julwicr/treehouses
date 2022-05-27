@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   padding: 24px;
-  margin: 10px;
+  // margin: 10px;
   border-top: solid 1px #87b39e;
   // border-bottom: solid 1px #87b39e;
 }
@@ -19,6 +19,7 @@
   border-radius: 5px;
   background-color: #C2DED1;
   margin: 10px;
+  margin-top: 25px;
 }
 
 .booking-info {
@@ -31,6 +32,7 @@
   position: relative;
   background-color: white;
   width: 50%;
+  border-radius: 5px;
 }
 
 .status {
@@ -53,6 +55,8 @@
 
 .treehouse {
   padding-bottom: 25px;
+  margin-top: 25px;
+  border-radius: 5px;
 }
 
 .treehouses {
@@ -61,7 +65,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius: 5px;
   background-color: #f9f3ee;
-  margin: 20px;
+  margin: 25px;
 }
 
 
@@ -109,3 +113,14 @@
     background-color: #eb44683f;
 }
 }
+
+.status {
+  // color: white
+  background-color: #C2DED1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+// .status p {
+//   color: white !important;
+// }
