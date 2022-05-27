@@ -37,8 +37,12 @@
   <div class="col-8 mt-3">
     <div class="treehouse-show-card mt-3">
       <h4>Last Review</h4>
+      <% if @reviews.last.nil? %>
+      <p>No reviews yet !</p>
+      <% else %>
       <%=  @reviews.last.comment%>
       <%= link_to "All Reviews", treehouse_reviews_path(@treehouse), class: "btn-approve" %>
+      <% end %>
     </div>
    </div>
   </div>
