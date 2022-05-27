@@ -19,7 +19,7 @@
         <p><%= @treehouse.description %></p>
       </div>
     </div>
-        <div class="col-4 mt-3">
+      <div class="col-4 mt-3">
       <div class="treehouse-show-card">
         <div class="treehouse-show-card-booking-form">
           <div class="book-now text-start"><h1>Book now</h1></div>
@@ -36,15 +36,9 @@
     </div>
   <div class="col-8 mt-3">
     <div class="treehouse-show-card mt-3">
-        <h4>Rate this Treehouse</h4>
-        <%= simple_form_for([@treehouse, @review]) do |f| %>
-          <%= f.input :comment %>
-          <%= f.input :rating %>
-          <%= f.submit "Rate it", class: "btn-approve"%>
-        <% end %>
-        <% @reviews.each do |review| %>
-        <%= review.comment %>
-        <%end %>
+      <h4>Last Review</h4>
+      <%=  @reviews.last.comment%>
+      <%= link_to "All Reviews", treehouse_reviews_path(@treehouse), class: "btn-approve" %>
     </div>
    </div>
   </div>
