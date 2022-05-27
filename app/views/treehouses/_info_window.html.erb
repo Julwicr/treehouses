@@ -1,2 +1,4 @@
-<h4 class="color-info"><%= treehouse.name %></h4>
-<p class="samefont"><%= treehouse.address %></p>
+<%= link_to treehouse_path(treehouse) do %>
+  <h4 class="color-info"><%= treehouse.name %></h4>
+  <p class="samefont"><%= treehouse.address %></p>
+<% end %>
