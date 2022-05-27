@@ -10,7 +10,7 @@
             <%= link_to "Back to list", treehouse_path(@treehouse), class: "btn-approve" %>
           </div>
         </div>
-        <% @reviews.each do |review| %>
+        <% @treehouse.reviews.each do |review| %>
           <li><i><%= review.comment %></i></li>
         <%end %>
       </div>
